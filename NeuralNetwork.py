@@ -69,7 +69,7 @@ class NeuralNetwork(nn.Module):
                 with torch.no_grad():
                     val_loss = criterion(self(x_val), y_val)
                     val_acc = (self(x_val).argmax(dim=1) == y_val).float().mean()
-                    print(f"Epoch {epoch}: Train loss: {loss.item():.4f}, Val loss: {val_loss.item():.4f}, Val acc: {val_acc:.4f}")
+                    # print(f"Epoch {epoch}: Train loss: {loss.item():.4f}, Val loss: {val_loss.item():.4f}, Val acc: {val_acc:.4f}")
                     if val_loss < best_val_loss:
                         best_val_loss = val_loss
                         best_weights = copy.deepcopy(self.state_dict())
